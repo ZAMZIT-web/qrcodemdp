@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import QRCode from 'qrcode.react';
 import { FaLock, FaKey, FaCheckSquare, FaQrcode, FaClipboard, FaDownload } from 'react-icons/fa';
+import { CSSProperties } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
   const [length, setLength] = useState<number>(12);
@@ -42,7 +44,7 @@ export default function Home() {
     setPassword(generatedPassword);
   };
 
-  const copyPassword = async (): void => {
+  const copyPassword = async () => {
     try {
       await navigator.clipboard.writeText(password);
       setShowNotification(true);
@@ -66,7 +68,7 @@ export default function Home() {
   return (
     <div style={styles.container}>
       <div style={styles.header}>
-        <img src="/assets/logo.png" alt="Logo" style={styles.logo} />
+        <Image src='/assets/logo.png' alt="Logo"  width={100} height={100} style={styles.logo} />
       </div>
       <div style={styles.content}>
         <h1 style={styles.title}><FaLock /> Générateur de Mot de Passe & QR Code</h1>
@@ -161,7 +163,7 @@ export default function Home() {
         </div>
 
         <div style={styles.informationSection}>
-          <h2 style={styles.robustTitle}>Qu'est-ce qui fait un mot de passe robuste ?</h2>
+          <h2 style={styles.robustTitle}>Qu est-ce qui fait un mot de passe robuste ?</h2>
           <p style={styles.robustSubtitle}>Les mots de passe robustes sont uniques et aléatoires.</p>
           <p>
             Les humains ne sont pas très bons pour trouver des mots de passe étant l’un ou l’autre, et encore moins les deux.
@@ -173,7 +175,7 @@ export default function Home() {
         <div style={styles.uniquePasswordSection}>
           <h2 style={styles.uniquePasswordTitle}>Pourquoi mon mot de passe doit-il être unique ?</h2>
           <p style={styles.uniquePasswordText}>
-            Utiliser le même mot de passe pour plusieurs comptes est dangereux car si l'un de vos comptes est compromis, 
+            Utiliser le même mot de passe pour plusieurs comptes est dangereux car si l un de vos comptes est compromis, 
             les autres le seront également. Créez un mot de passe unique pour chaque compte pour une meilleure sécurité.
           </p>
         </div>
@@ -181,14 +183,14 @@ export default function Home() {
         <div style={styles.uniquePasswordSection}>
           <h2 style={styles.uniquePasswordTitle}>Pourquoi mon mot de passe doit-il être aléatoire ?</h2>
           <p>
-            Les mots de passe aléatoires sont difficiles à deviner et plus difficiles à craquer pour les programmes de piratage. En cas de modèle discernable, les chances qu'un pirate utilise une attaque par force brute et accède à votre compte augmentent de façon exponentielle. Les mots de passe aléatoires peuvent contenir un mélange de caractères sans aucune relation, mais combiner des mots sans relation fonctionne également. C'est ainsi que le générateur de mot de passe robuste 1Password crée des mots de passe faciles à retenir tout en étant robustes cryptographiquement.
+            Les mots de passe aléatoires sont difficiles à deviner et plus difficiles à craquer pour les programmes de piratage. En cas de modèle discernable, les chances qu un pirate utilise une attaque par force brute et accède à votre compte augmentent de façon exponentielle. Les mots de passe aléatoires peuvent contenir un mélange de caractères sans aucune relation, mais combiner des mots sans relation fonctionne également. C est ainsi que le générateur de mot de passe robuste 1Password crée des mots de passe faciles à retenir tout en étant robustes cryptographiquement.
           </p>
         </div>
         
         <div style={styles.footer}>
           <p style={styles.footerText}>
             PassMaster est un outil de génération de mots de passe et de codes QR pour vous aider à maintenir vos informations 
-            en sécurité. Assurez-vous d'utiliser des mots de passe forts et uniques pour protéger vos comptes en ligne.
+            en sécurité. Assurez-vous d utiliser des mots de passe forts et uniques pour protéger vos comptes en ligne.
           </p>
         </div>
       </div>
@@ -202,7 +204,7 @@ export default function Home() {
   );
 }
 
-const styles = {
+const styles: { [key: string]: CSSProperties } = {
   container: {
     display: 'flex',
     flexDirection: 'column' as const,
