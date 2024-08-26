@@ -29,6 +29,8 @@ export default function RootLayout({
           `,
           }}
         />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2760279172389221"
+     crossOrigin="anonymous"></script>
         {/* End Google Tag Manager */}
       </head>
       <body className={inter.className}>
