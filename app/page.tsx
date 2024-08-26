@@ -7,24 +7,6 @@ import { CSSProperties } from 'react';
 import Image from 'next/image';
 
 export default function Home() {
-  // Balise Google Analytics
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZKFDJK70MJ';
-    document.head.appendChild(script);
-
-    script.onload = () => {
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        window.dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-ZKFDJK70MJ');
-    };
-  }, []);
-
-  // Le reste de votre code...
   const [length, setLength] = useState<number>(12);
   const [includeUppercase, setIncludeUppercase] = useState<boolean>(true);
   const [includeNumbers, setIncludeNumbers] = useState<boolean>(true);
