@@ -7,6 +7,22 @@ import { CSSProperties } from 'react';
 import Image from 'next/image';
 
 export default function Home() {
+   // Balise Google Analytics
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9YGGS6JDLL';
+    document.head.appendChild(script);
+
+    script.onload = () => {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9YGGS6JDLL');
+    };
+  }, []);
+
+  // Le reste de votre code...
   const [length, setLength] = useState<number>(12);
   const [includeUppercase, setIncludeUppercase] = useState<boolean>(true);
   const [includeNumbers, setIncludeNumbers] = useState<boolean>(true);
