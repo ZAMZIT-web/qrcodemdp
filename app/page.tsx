@@ -7,18 +7,20 @@ import { CSSProperties } from 'react';
 import Image from 'next/image';
 
 export default function Home() {
-   // Balise Google Analytics
+  // Balise Google Analytics
   useEffect(() => {
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9YGGS6JDLL';
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZKFDJK70MJ';
     document.head.appendChild(script);
 
     script.onload = () => {
       window.dataLayer = window.dataLayer || [];
-      function gtag(){window.dataLayer.push(arguments);}
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
       gtag('js', new Date());
-      gtag('config', 'G-9YGGS6JDLL');
+      gtag('config', 'G-ZKFDJK70MJ');
     };
   }, []);
 
