@@ -18,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Google Tag Manager */}
+        <meta name="google-adsense-account" content="ca-pub-2760279172389221"></meta>
         <script
           dangerouslySetInnerHTML={{
             __html: `
