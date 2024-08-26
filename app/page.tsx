@@ -29,7 +29,7 @@ export default function Home() {
     const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
     const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const numberChars = '0123456789';
-    const symbolChars = '!@#$%^&*()_+~`|}{[]:;?><,./-=';
+    const symbolChars = '!@#$%^&*()_+~|}{[]:;?><,./-=';
     
     let allChars = lowercaseChars;
     if (includeUppercase) allChars += uppercaseChars;
